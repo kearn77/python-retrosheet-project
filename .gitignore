@@ -1,0 +1,14 @@
+baseball_env/
+event_files/BEVENT.exe
+event_files/BGAME.exe
+event_files/BOX.exe
+*TEAM*
+*.EVA
+*.EVN
+*.ROS
+project_scripts/__pycache__/
+example_notebooks/.vscode/
+project_scripts/test.ipynb
+json_files/precipitation.json
+json_files/sky.json
+json_files/wind_direction.json
