@@ -281,7 +281,7 @@ zeros, and it accommodates both string and numeric input.  After passing
 bevent as an argument into the data parameter, we pass a list comprehension as
 an argument into the columns parameter.  This merits an explanation.
 
-```
+```python
 # Create a pandas DataFrame for Boston's 
 # July 2021 results using bevent.
 bostonJulyEvents = pd.DataFrame(
@@ -317,7 +317,7 @@ simple yet powerful request with query:  if the event text column contains a
 query against the original DataFrame by setting "in place" to True, we will
 create a new DataFrame with our query results, titled "strikeThree."
 
-```
+```python
 # Strikeouts at Boston home games, July 2021. 
 strikeThree = (
     bostonJulyEvents
@@ -354,7 +354,7 @@ regex methods compile, findall, and sub to parse a game id for its year,
 month, and day components.  Once we have retrieved these components, we pass
 them into datetime and return a date to the caller.
 
-```
+```python
 # Standard library imports.
 from datetime import datetime
 from pathlib import Path
@@ -396,7 +396,7 @@ column, replacing zero with "away" and one with "home."
 [july_strikeouts_second_export](../project_exports/july_strikeouts_second_export.csv) captures the results of our revised dataframe.  Much better,
 wouldn’t you say?
 
-```
+```python
 # Strikeouts at Boston home games, July 2021. 
 strikeThree = (
     bostonJulyEvents
@@ -447,7 +447,7 @@ efforts, ["july_strikeouts_third_export](../project_exports/july_strikeouts_thir
 two-thousand-one-hundred-eight Fenway strikeouts from July 2010 through July
 2020.
 
-```
+```python
 # Create a pandas DataFrame for Boston's 
 # July results, 2010 through 2020.
 bostonJulyEvents = pd.DataFrame(
