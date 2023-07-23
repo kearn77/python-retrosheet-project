@@ -443,7 +443,7 @@ part...?
 The cost of this additional information?  A single line.  Passing arguments
 into bevent’s year start and year end parameters executes the desired query
 for all years in the range, inclusive of the bounds.  The final product of our
-efforts, "july_strikeouts_third_export," details all
+efforts, ["july_strikeouts_third_export](../project_exports/july_strikeouts_third_export.csv)," details all
 two-thousand-one-hundred-eight Fenway strikeouts from July 2010 through July
 2020.
 
