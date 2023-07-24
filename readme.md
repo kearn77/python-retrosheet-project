@@ -33,12 +33,12 @@ the actual contents of the data sets.
 
 The project summary directory contains two markdown files: synopsis.md and
 code_reference.md.  The former provides a broad overview of the project and a
-test case for the module.  The latter provides a summary of the
-repository’s code.
+test case for the modules.  The latter provides a summary of the
+repository’s code.  Newcomers to the repository should start here.
 
 ### [Project Scripts](/project_scripts/)
 
-The scripts directory contains the module’s python files.  Anyone
+The scripts directory contains the project's python files.  Anyone
 reviewing this directory would benefit from having the [code reference](/project_summary/code_reference.md) on hand.
 The bulk of the code exists within [retro_object.py](/project_scripts/retro_object.py), which creates a python
 class capable of calling retrosheet's software.
@@ -64,23 +64,24 @@ libraries, such as matplotlib and seaborn.
 The exports directory contains the .csv files created by the example
 notebooks.  
 
-### [Json Files](/json_files/)
+### [JSON Files](/json_files/)
 
-The JSON directory contains four files:
+The JSON directory contains four files - bevent_fields, bgame_fields,
+team_extensions, and bio_information - which accomplish the following:
 
 -	bevent_fields.json
 
 Stores the column information associated with bevent.exe.  Can be used to
 create a python dictionary that populates a pandas DataFrame with appropriate
-titles.  The key-value relationship is of the form int -> str, where int is a
-number zero to ninety-six that returns a column title.
+column titles.  The key-value relationship is of the form int -> str, where
+int is a number zero to ninety-six and str is a column title.
 
 -	bgame_fileds.json
 
 Stores the column information associated with bgame.exe.  Can be used to
 create a python dictionary that populates a pandas DataFrame with appropriate
-titles.  The key-value relationship is of the form int -> str, where int is a
-number zero to eighty-four that returns a column title.
+column titles.  The key-value relationship is of the form int -> str, where
+int is a number zero to eighty-four and str is a column title.
 
 -	team_extensions.json
 
@@ -109,15 +110,24 @@ Normally, the event_files folder would contain the following:
 - [Team files](https://www.retrosheet.org/game.htm "Links to retrosheet.") of the form TEAM2000, TEAM2001, ...
 
 To avoid cluttering the repository, I have included links to these resources
-rather than the resources themselves.  
+rather than the resources themselves.  They are required to successfully run the
+test cases outlined in the example notebooks. 
 
 ## Requirements
+
+The contents contained within the “[Project Scripts](/project_scripts/),” “[JSON Files](/json_files/),” and
+“[Event Files](/event_files/)” directories are required to run the project.
+
 I used python’s standard library for the majority of the project’s scripts.
-The only deviation in the core [modules](/project_scripts/) is an import of numpy’s nan
-attribute.  The example notebooks rely on two third-party libraries: pandas,
-a popular data science library; and notebooks, Jupyter’s environment for
-interactive computing.  For more information about the project’s development
-environment, please reference [requirements.txt](/requirements.txt).
+The only deviation from this practice is an import of numpy’s nan attribute in
+[retro_object.py](/project_scripts/retro_object.py).  
+
+The example notebooks rely on two third-party libraries:
+pandas, a popular data science library; and notebooks, Jupyter’s environment
+for interactive computing. 
+
+For more information about the project’s development environment, please
+reference [requirements.txt](/requirements.txt).
 
 ## Status
 
@@ -127,10 +137,12 @@ following:
 -	Reduce the complexity of retro_object.py.  As it stands, this module is
 approximately seven-hundred lines long, although it could be more terse,
 expressive, and idiomatic.
+
 -	Develop more robust use cases.
+
 -	Incorporate more of retrosheet’s peripherals into the project.  As it is
 currently composed, the project includes only what is necessary to parse the
 event files for player statistics and biographical information.
 
 Regardless of the project's current state, hopefully anyone reading this
-repository can glean some inspiration from my efforts.
+repository can glean something useful from my efforts.
