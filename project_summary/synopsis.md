@@ -8,7 +8,7 @@ the massive amount of information I needed to scrape, however, even
 sportsreference’s web-scraping policy presented difficulties I struggled to 
 overcome.  Trust me, it is difficult to capture data in a timely manner capped
 at a request per second!   Fortunately, I found a more complete, open-source
-set of resources - [retrosheet.com](https://www.retrosheet.org/).
+set of resources - [retrosheet.org.](https://www.retrosheet.org/).
 
 Founded in 1989, retrosheet is a record keeping project that computerizes
 play-by-play accounts of Major League baseball games.  Information on the site

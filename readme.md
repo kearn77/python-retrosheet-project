@@ -1,6 +1,5 @@
 # Project Overview
 
-[id1]: ## "Links to retrosheet.com"
 Several months ago, as a first attempt at a programming project, I cobbled
 together a database file containing MLB results and statistics over the last
 twenty seasons.  I accomplished this by scraping sportsreference.com, which
@@ -9,7 +8,7 @@ the massive amount of information I needed to scrape, however, even
 sportsreference’s web-scraping policy presented difficulties I struggled to 
 overcome.  Trust me, it is difficult to capture data in a timely manner capped
 at a request per second!   Fortunately, I found a more complete, open-source
-set of resources - [retrosheet.com.][id1](https://www.retrosheet.org/)
+set of resources - [retrosheet.org.](https://www.retrosheet.org/ "Links to retrosheet.")
 
 Founded in 1989, retrosheet is a record keeping project that computerizes
 play-by-play accounts of Major League baseball games.  Information on the site
@@ -98,12 +97,12 @@ that returns a dictionary of biographical information.
 
 Normally, the event_files folder would contain the following:
 
-- [bevent.exe][id1](https://www.retrosheet.org/resources/resources1.html);
-- [bgame.exe][id1](https://www.retrosheet.org/resources/resources1.html);
-- [box.exe][id1](https://www.retrosheet.org/resources/resources1.html);
-- [Event files][id1](https://www.retrosheet.org/game.htm) ending in .EVN or .EVA;
-- [Roster files][id1](https://www.retrosheet.org/game.htm) ending in .ROS;
-- [Team files][id1](https://www.retrosheet.org/game.htm) of the form TEAM2000, TEAM2001, ...
+- [bevent.exe](https://www.retrosheet.org/resources/resources1.html "Links to retrosheet.");
+- [bgame.exe](https://www.retrosheet.org/resources/resources1.html "Links to retrosheet.");
+- [box.exe](https://www.retrosheet.org/resources/resources1.html "Links to retrosheet.");
+- [Event files](https://www.retrosheet.org/game.htm "Links to retrosheet.") ending in .EVN or .EVA;
+- [Roster files](https://www.retrosheet.org/game.htm "Links to retrosheet.") ending in .ROS;
+- [Team files](https://www.retrosheet.org/game.htm "Links to retrosheet.") of the form TEAM2000, TEAM2001, ...
 
 To avoid cluttering the repository, I have included links to these resources
 rather than the resources themselves.  
