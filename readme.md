@@ -29,10 +29,6 @@ the actual contents of the data sets.
 
 ## Table of Contents
 
-I would suggest approaching the repository in the following order:
-
-## Core Material
-
 ### [Project Summary](/project_summary/)
 
 The project summary directory contains two markdown files: synopsis.md and
@@ -68,8 +64,6 @@ libraries, such as matplotlib and seaborn.
 The exports directory contains the .csv files created by the example
 notebooks.  
 
-## Peripherals
-
 ### [Json Files](/json_files/)
 
 The JSON directory contains four files:
@@ -99,16 +93,16 @@ retrosheet player id, an alphanumeric representation of a player’s name.   The
 key-value relationship is of the form str -> dict, where str is a player id
 that returns a dictionary of biographical information.
 
-### [event_files](/event_files/)
-
+### [Event Files](/event_files/)
+[id1]: ## "Links to retrosheet.com"
 Normally, the event_files folder would contain the following:
 
-- [bevent.exe](https://www.retrosheet.org/resources/resources1.html);
-- [bgame.exe](https://www.retrosheet.org/resources/resources1.html);
-- [box.exe](https://www.retrosheet.org/resources/resources1.html);
-- [Event files](https://www.retrosheet.org/game.htm) ending in .EVN or .EVA;
-- [Roster files](https://www.retrosheet.org/game.htm) ending in .ROS;
-- [Team files](https://www.retrosheet.org/game.htm) of the form TEAM2000, TEAM2001, ...
+- [bevent.exe][id1](https://www.retrosheet.org/resources/resources1.html);
+- [bgame.exe][id1](https://www.retrosheet.org/resources/resources1.html);
+- [box.exe][id1](https://www.retrosheet.org/resources/resources1.html);
+- [Event files][id1](https://www.retrosheet.org/game.htm) ending in .EVN or .EVA;
+- [Roster files][id1](https://www.retrosheet.org/game.htm) ending in .ROS;
+- [Team files][id1](https://www.retrosheet.org/game.htm) of the form TEAM2000, TEAM2001, ...
 
 To avoid cluttering the repository, I have included links to these resources
 rather than the resources themselves.  
