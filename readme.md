@@ -1,5 +1,6 @@
 ## Project Overview
 
+
 Some time ago, as a first attempt at a programming project, I cobbled
 
 together a database file containing MLB results and statistics over the last
@@ -19,6 +20,7 @@ at a request per second!   Fortunately, I found a more complete, open-source
 set of resources - [retrosheet.org.](https://www.retrosheet.org/ "Links to retrosheet.")
 
 
+
 Founded in 1989, retrosheet is a record keeping project that computerizes
 
 play-by-play accounts of Major League baseball games.  Information on the site
@@ -26,6 +28,7 @@ play-by-play accounts of Major League baseball games.  Information on the site
 is free to use, under the condition that any project developed with the site's
 
 information [properly cites the site](/IMPORTANT_RETROSHEET_NOTICE.md).
+
 
 
 Although retrosheet makes staggering amounts of information available free of
@@ -41,6 +44,7 @@ command line, with output redirected to text files that can be imported into
 database and spreadsheet software.
 
 
+
 My solution to this problem –  a python module that emulates the command
 
 line and wraps around the retrosheet applications – allows python enthusiasts
@@ -48,6 +52,7 @@ line and wraps around the retrosheet applications – allows python enthusiasts
 to start with the fun stuff – creating descriptive statistics and exploring
 
 the actual contents of the data sets.
+
 
 ## Table of Contents
 
@@ -67,9 +72,9 @@ repository’s code.  Newcomers to the repository should start here.
 ### [Project Scripts](/project_scripts/)
 
 
-The scripts directory contains the project's python files.  Anyone
+The scripts directory contains the project's python files.  Anyone reviewing
 
-reviewing this directory would benefit from having the [code reference](/project_summary/code_reference.md) on hand.
+this directory would benefit from having the [code reference](/project_summary/code_reference.md) on hand.
 
 The bulk of the code exists within [retro_object.py](/project_scripts/retro_object.py), which creates a python
 
@@ -88,11 +93,13 @@ Fenway park from 2010 through 2020.  For the following reasons, the code
 contained within this directory utilizes Jupyter Notebooks as an environment.
 
 
+
 -  It is the tool of choice among data scientists and data enthusiasts.
 
 Consequently, it seemed a logical choice for visualizing the data contained
 
 within retrosheet’s event files.
+
 
 
 -  Moreover, because it provides an interactive environment, it reduces the
@@ -118,6 +125,7 @@ The JSON directory contains four files - bevent_fields, bgame_fields,
 team_extensions, and bio_information - which accomplish the following:
 
 
+
 -	bevent_fields.json
 
 Stores the column information associated with bevent.exe.  Can be used to
@@ -127,6 +135,7 @@ create a python dictionary that populates a pandas DataFrame with appropriate
 column titles.  The key-value relationship is of the form int -> str, where
 
 int is a number zero to ninety-six and str is a column title.
+
 
 
 -	bgame_fileds.json
@@ -140,6 +149,7 @@ column titles.  The key-value relationship is of the form int -> str, where
 int is a number zero to eighty-four and str is a column title.
 
 
+
 -	team_extensions.json
 
 Stores team abbreviations for every major league baseball team.  Abbreviations
@@ -151,6 +161,7 @@ Similarly, a RetroObject is instantiated when passed a valid team
 abbreviation.  The key-value relationship is of the form str -> list\[list\],
 
 where str is a team abbreviation that returns a team’s historical information.
+
 
 
 -	bio_information.json
@@ -171,17 +182,24 @@ Normally, the event_files folder would contain the following:
 
 
 - [bevent.exe](https://www.retrosheet.org/resources/resources1.html "Links to retrosheet.");
+
 - [bgame.exe](https://www.retrosheet.org/resources/resources1.html "Links to retrosheet.");
+
 - [box.exe](https://www.retrosheet.org/resources/resources1.html "Links to retrosheet.");
+
 - [Event files](https://www.retrosheet.org/game.htm "Links to retrosheet.") ending in .EVN or .EVA;
+
 - [Roster files](https://www.retrosheet.org/game.htm "Links to retrosheet.") ending in .ROS;
+
 - [Team files](https://www.retrosheet.org/game.htm "Links to retrosheet.") of the form TEAM2000, TEAM2001, ...
+
 
 To avoid cluttering the repository, I have included links to these resources
 
 rather than the resources themselves.  They are required to successfully run the
 
 test cases outlined in the example notebooks. 
+
 
 ## Requirements
 
@@ -191,6 +209,7 @@ The contents contained within the “[Project Scripts](/project_scripts/),” �
 “[Event Files](/event_files/)” directories are required to run the project.
 
 
+
 I used python’s standard library for the majority of the project’s scripts.
 
 The only deviation from this practice is an import of numpy’s nan attribute in
@@ -198,11 +217,13 @@ The only deviation from this practice is an import of numpy’s nan attribute in
 [retro_object.py](/project_scripts/retro_object.py).
 
 
+
 The example notebooks rely on two third-party libraries:
 
 pandas, a popular data science library; and notebooks, Jupyter’s environment
 
 for interactive computing. 
+
 
 
 For more information about the project’s development environment, please
@@ -216,6 +237,7 @@ reference [requirements.txt](/requirements.txt).
 This is far from a finished project.  In the future, I hope to accomplish the
 
 following:
+
 
 
 -	Reduce the complexity of retro_object.py.  As it stands, this module is
@@ -233,6 +255,7 @@ expressive, and idiomatic.
 currently composed, the project includes only what is necessary to parse the
 
 event files for player statistics and biographical information.
+
 
 
 Regardless of the project's current state, hopefully anyone reading this
