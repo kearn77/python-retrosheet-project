@@ -24,7 +24,7 @@ database and spreadsheet software.
 
 My solution to this problem –  a python module that emulates the command
 line and wraps around the retrosheet applications – allows python enthusiasts
-to start with the fun stuff - creating descriptive statistics and exploring
+to start with the fun stuff – creating descriptive statistics and exploring
 the actual contents of the data sets.
 
 ## Table of Contents
@@ -69,18 +69,21 @@ notebooks.
 The JSON directory contains four files:
 
 -	bevent_fields.json
+
 Stores the column information associated with bevent.exe.  Can be used to
 create a python dictionary that populates a pandas DataFrame with appropriate
 titles.  The key-value relationship is of the form int -> str, where int is a
 number zero to ninety-six that returns a column title.
 
 -	bgame_fileds.json
+
 Stores the column information associated with bgame.exe.  Can be used to
 create a python dictionary that populates a pandas DataFrame with appropriate
 titles.  The key-value relationship is of the form int -> str, where int is a
 number zero to eighty-four that returns a column title.
 
 -	team_extensions.json
+
 Stores team abbreviations for every major league baseball team.  Abbreviations
 are used when calling bevent, bgame, and box from the command line.
 Similarly, a RetroObject is instantiated when passed a valid team
@@ -88,6 +91,7 @@ abbreviation.  The key-value relationship is of the form str -> list\[list\],
 where str is a team abbreviation that returns a team’s historical information.
 
 -	bio_information.json
+
 Contains player biographical data.  This data is stored in relation to a
 retrosheet player id, an alphanumeric representation of a player’s name.   The
 key-value relationship is of the form str -> dict, where str is a player id
