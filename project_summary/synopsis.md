@@ -1,6 +1,6 @@
 ## Project Inception
 
-Several months ago, as a first attempt at a programming project, I cobbled
+Some time ago, as a first attempt at a programming project, I cobbled
 together a database file containing MLB results and statistics over the last
 twenty seasons.  I accomplished this by scraping sportsreference.com, which
 has a generous web-scraping policy that accommodates most get requests.  Given
