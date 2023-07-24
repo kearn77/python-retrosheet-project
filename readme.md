@@ -1,5 +1,6 @@
 # Project Overview
 
+[id1]: ## "Links to retrosheet.com"
 Several months ago, as a first attempt at a programming project, I cobbled
 together a database file containing MLB results and statistics over the last
 twenty seasons.  I accomplished this by scraping sportsreference.com, which
@@ -8,7 +9,7 @@ the massive amount of information I needed to scrape, however, even
 sportsreference’s web-scraping policy presented difficulties I struggled to 
 overcome.  Trust me, it is difficult to capture data in a timely manner capped
 at a request per second!   Fortunately, I found a more complete, open-source
-set of resources - [retrosheet.com.](https://www.retrosheet.org/)
+set of resources - [retrosheet.com.][id1](https://www.retrosheet.org/)
 
 Founded in 1989, retrosheet is a record keeping project that computerizes
 play-by-play accounts of Major League baseball games.  Information on the site
@@ -94,7 +95,7 @@ key-value relationship is of the form str -> dict, where str is a player id
 that returns a dictionary of biographical information.
 
 ### [Event Files](/event_files/)
-[id1]: ## "Links to retrosheet.com"
+
 Normally, the event_files folder would contain the following:
 
 - [bevent.exe][id1](https://www.retrosheet.org/resources/resources1.html);
