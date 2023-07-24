@@ -1,4 +1,4 @@
-# Project Inception
+## Project Inception
 
 Several months ago, as a first attempt at a programming project, I cobbled
 together a database file containing MLB results and statistics over the last
