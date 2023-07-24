@@ -119,7 +119,7 @@ successfully run the test cases outlined in the example notebooks.
 
 ## Requirements
 
-The contents contained within the "[Project Scripts](/project_scripts/),", “[JSON Files](/json_files/)," and<br/>
+The contents contained within the "[Project Scripts](/project_scripts/)", “[JSON Files](/json_files/)," and<br/>
 “[Event Files](/event_files/)” directories are required to run the project.
 
 I used python’s standard library for the majority of the project’s scripts.<br/>

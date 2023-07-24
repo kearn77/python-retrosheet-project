@@ -9,5 +9,5 @@ Normally, the event_files folder would contain the following:
 - Roster files ending in .ROS;
 - Team files of the form TEAM2000, TEAM2001, ...
 
-Anyone interested in obtaining these resources can visit retrosheet's website
+Anyone interested in obtaining these resources can visit retrosheet's website<br/>
 at https://www.retrosheet.org/ .

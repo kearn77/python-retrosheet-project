@@ -1,31 +1,31 @@
 ## Naming Conventions
 
-In keeping with python convention, I have written project level file names in
-snake-case, with a single underscore separating distinct, lower-case words.
-Module level variable names are written in camel-case style: lowercase letters
-compose the first word in a variable, and the first letter of any subsequent
-word is capitalized.  In accordance with the PEP8 style guide, classes are an
+In keeping with python convention, I have written project level file names in<br/>
+snake-case, with a single underscore separating distinct, lower-case words.<br/>
+Module level variable names are written in camel-case style: lowercase letters<br/>
+compose the first word in a variable, and the first letter of any subsequent<br/>
+word is capitalized.  In accordance with the PEP8 style guide, classes are an<br/>
 exception to this rule, beginning with a capital rather than lowercase letter.   
 	
-As highlighted in the project synopsis, the majority of RetroObject's methods
-format user input into a valid query string.  These strings are then passed to
-“bevent,” “bgame,” and “box.”  Since users are not meant to call formatting
-methods directly, they begin with double underscores, e.g.,
-__createColumnString.  Note that the first method in the RetroObject class,
-the double underscore enclosed __init__, is a common method shared by all
-python classes.  Roughly equivalent to a constructor, __init__ is responsible
+As highlighted in the project synopsis, the majority of RetroObject's methods<br/>
+format user input into a valid query string.  These strings are then passed to<br/>
+“bevent,” “bgame,” and “box.”  Since users are not meant to call formatting<br/>
+methods directly, they begin with double underscores, e.g.,<br/>
+__createColumnString.  Note that the first method in the RetroObject class,<br/>
+the double underscore enclosed __init__, is a common method shared by all<br/>
+python classes.  Roughly equivalent to a constructor, __init__ is responsible<br/>
 for creating instances of a class.
 
 ## Line Length, Indentation, and Blank Spaces
 
-PEP8 recommends limiting most lines to a maximum of seventy-nine characters,
-with docstrings and long blocks of text limited to seventy-two characters.
-These restrictions allow readers to split their screens while maintaining code
-readability, enabling the cross referencing of source code and library
-documentation.  With this goal in mind, continuation lines have been written
-in accordance with PEP8's indenting recommendations, though there are several
-recurring patterns that may seem awkward to programmers.  For example, longer
-list comprehensions have been split across multiple lines, resulting 
+PEP8 recommends limiting most lines to a maximum of seventy-nine characters,<br/>
+with docstrings and long blocks of text limited to seventy-two characters.<br/>
+These restrictions allow readers to split their screens while maintaining code<br/>
+readability, enabling the cross referencing of source code and library<br/>
+documentation.  With this goal in mind, continuation lines have been written<br/>
+in accordance with PEP8's indenting recommendations, though there are several<br/>
+recurring patterns that may seem awkward to programmers.  For example, longer<br/>
+list comprehensions have been split across multiple lines, resulting<br/>
 in the following pattern:
 
 ```python
@@ -36,36 +36,36 @@ self.dateRange = [
 ```
 Figure 1 - PEP8 formatted list comprehension.
 
-While my natural inclination is to write the above comprehension on a single
-line, I have opted for the current form as a matter of consistency with PEP8.
+While my natural inclination is to write the above comprehension on a single<br/>
+line, I have opted for the current form as a matter of consistency with PEP8.<br/>
 My apologies for any vertigo that may ensue.
 	
-With the exception of multi-line expressions, whitespace has been omitted
-immediately insides parentheses and before commas.  However, a single space
-has been inserted after a comma that separates one value from another.  For
-example, when unpacking a tuple, the code favors the following convention: 
-x,y = 5, 10.  Similarly, values passed into method parameters are separated by
+With the exception of multi-line expressions, whitespace has been omitted<br/>
+immediately insides parentheses and before commas.  However, a single space<br/>
+has been inserted after a comma that separates one value from another.  For<br/>
+example, when unpacking a tuple, the code favors the following convention: <br/>
+x,y = 5, 10.  Similarly, values passed into method parameters are separated by<br/>
 a single space.
 
 ## Code Notes
 
-The program begins by importing a number of standard library modules, third
-party modules, and local modules.  Standard library modules are imported
-first, third party modules second, local modules third.  As a secondary
-sorting convention, modules are ordered alphabetically ascending.   
+The program begins by importing a number of standard library modules, third<br/>
+party modules, and local modules.  Standard library modules are imported<br/>
+first, third party modules second, local modules third.  As a secondary<br/>
+sorting convention, modules are ordered alphabetically ascending.
 
-retro_object imports  event_parser, project_directories, and
-project_variables.  event_parser uses regular expressions to determine the
-bounds of the event files on record.  This will determine default year start
-and year end arguments for bevent, bgame, and box.  project_directories
-provides file paths called throughout retro_object, while project_variables
-contains a number of dictionaries that are used throughout retro_object to
+retro_object imports  event_parser, project_directories, and<br/>
+project_variables.  event_parser uses regular expressions to determine the<br/>
+bounds of the event files on record.  This will determine default year start<br/>
+and year end arguments for bevent, bgame, and box.  project_directories<br/>
+provides file paths called throughout retro_object, while project_variables<br/>
+contains a number of dictionaries that are used throughout retro_object to<br/>
 determine relevant team information and default column input.
 	
-There are several dictionaries located within project_variables that are not
-imported by retro_object.  The dictionary of player, manager, and umpire
-biographical information - titled bioDict - is especially useful to end users.
-Figure 2 demonstrates how these local modules can be imported by a scripts
+There are several dictionaries located within project_variables that are not<br/>
+imported by retro_object.  The dictionary of player, manager, and umpire<br/>
+biographical information - titled bioDict - is especially useful to end users.<br/>
+Figure 2 demonstrates how these local modules can be imported by a scripts<br/>
 running in a different directory.
 
 ```python
@@ -85,30 +85,30 @@ import retro_object as ro
 ```
 Figure 2 - Import statements.
 
-Next, the module defines the RetroObject class, which contains our program's
-core logic.  Class level attributes are defined before methods, and they may
-be called by any instance of the class through dot notation.  A class object
-is created by passing a valid "retroString" to a RetroObject call, e.g.,
-RetroObject('WAS').  Please note that ro.validTeams will return a list of
-acceptable retroStrings.  Moreover, capitalization does not matter; the
+Next, the module defines the RetroObject class, which contains our program's<br/>
+core logic.  Class level attributes are defined before methods, and they may<br/>
+be called by any instance of the class through dot notation.  A class object<br/>
+is created by passing a valid "retroString" to a RetroObject call, e.g.,<br/>
+RetroObject('WAS').  Please note that ro.validTeams will return a list of<br/>
+acceptable retroStrings.  Moreover, capitalization does not matter; the<br/>
 constructor automatically converts user input to upper case.
 
-Like all python classes, the first defined method is __init__, which creates
-class instances and assigns them the following attributes: "lowerBound,"
-"upperBound," "league," "fullName," and "fileExtension."  Generally speaking,
-the bounds are used to determine if a user requested season is valid, while
-fileExtension ensures that the proper file is queried - i.e., a query about an
-American League team is made against a .EVA file, a National League team a
-.EVN file.  fullName and league exist for informational purposes, since team
-abbreviations are not necessarily intuitive.  These attributes are sourced
-from the json file "team_extensions.json," which is loaded into the program
-and stored as the dictionary "teamDict."   A sixth attribute, titled "entry,"
-will return the dictionary value associated with a retroString, which serves
+Like all python classes, the first defined method is __init__, which creates<br/>
+class instances and assigns them the following attributes: "lowerBound,"<br/>
+"upperBound," "league," "fullName," and "fileExtension."  Generally speaking,<br/>
+the bounds are used to determine if a user requested season is valid, while<br/>
+fileExtension ensures that the proper file is queried - i.e., a query about an<br/>
+American League team is made against a .EVA file, a National League team a<br/>
+.EVN file.  fullName and league exist for informational purposes, since team<br/>
+abbreviations are not necessarily intuitive.  These attributes are sourced<br/>
+from the json file "team_extensions.json," which is loaded into the program<br/>
+and stored as the dictionary "teamDict."   A sixth attribute, titled "entry,"<br/>
+will return the dictionary value associated with a retroString, which serves<br/>
 as a dictionary key.
 
-Please note that two teams - the Houston Astros and Milwaukee Brewers - have
-played in both the American League and the National League.  Consequently,
-they have two entries for every attribute, each ending in a one or two, e.g.,
+Please note that two teams - the Houston Astros and Milwaukee Brewers - have<br/>
+played in both the American League and the National League.  Consequently,<br/>
+they have two entries for every attribute, each ending in a one or two, e.g.,<br/>
 lowerBoundOne versus lowerBoundTwo.
 
 ```python
@@ -118,33 +118,33 @@ boston = ro.RetroObject('BOS')
 ```
 Figure 3 - RetroObject instantiation.
 
-The first method encountered after __init__ is bevent, which returns
-play-by-play records as a list of lists.  Bevent begins by changing the
-current working directory to the application directory, and it concludes by
-returning to the module level directory.  This pattern is repeated for bgame
+The first method encountered after __init__ is bevent, which returns<br/>
+play-by-play records as a list of lists.  Bevent begins by changing the<br/>
+current working directory to the application directory, and it concludes by<br/>
+returning to the module level directory.  This pattern is repeated for bgame<br/>
 and box.
 
-Six arguments may be passed to bevent, dictating the column numbers to be
-queried, the desired date range from which to pull information, and the
-seasons requested by the caller.  After assigning these variables to self, the
-method runs a conditional statement to determine whether the caller passed
-both a game id and start/end parameters to the method.  If the caller passed
-both types of arguments, then the program warns that game id takes precedence
-over start and end, and only one record - that associated with the game id -
+Six arguments may be passed to bevent, dictating the column numbers to be<br/>
+queried, the desired date range from which to pull information, and the<br/>
+seasons requested by the caller.  After assigning these variables to self, the<br/>
+method runs a conditional statement to determine whether the caller passed<br/>
+both a game id and start/end parameters to the method.  If the caller passed<br/>
+both types of arguments, then the program warns that game id takes precedence<br/>
+over start and end, and only one record - that associated with the game id -<br/>
 will be returned.
 
-Subsequently, three variables are created - dateRange, output, and
-columnValidation.  Bevent iterates over the years in dateRange with a for
-loop, running its executable for every year in the range and concatenating the
-results to output.  __columnValidation, assigned to __columnPipe's output,
+Subsequently, three variables are created - dateRange, output, and<br/>
+columnValidation.  Bevent iterates over the years in dateRange with a for<br/>
+loop, running its executable for every year in the range and concatenating the<br/>
+results to output.  __columnValidation, assigned to __columnPipe's output,<br/>
 helps construct the query string passed into the run method.
 
-Once the loop has concluded, bevent uses the string method, "split," to
-convert rawOutput into a list, with newline characters serving as the
-demarcation separating entries.  Formatting changes are made to entries within
-output using a list comprehension and the string method "replace," and the
-program splits the list by comma, creating a list of lists.  Finally, bevent
-loops over every list in output, calling the __convertToInt method to change
+Once the loop has concluded, bevent uses the string method, "split," to<br/>
+convert rawOutput into a list, with newline characters serving as the<br/>
+demarcation separating entries.  Formatting changes are made to entries within<br/>
+output using a list comprehension and the string method "replace," and the<br/>
+program splits the list by comma, creating a list of lists.  Finally, bevent<br/>
+loops over every list in output, calling the __convertToInt method to change<br/>
 strings to integers, where appropriate.  Output is returned to the caller.
 
 ```python
@@ -165,12 +165,12 @@ def bevent(
 ```
 Figure 4 - bevent call signature and docstring.
 
-The two methods after bevent - bgame and box - mirror bevent's structure.
-There is only one meaningful difference between the type of data returned by
-bevent and bgame - the latter contains three columns that return date
-information.  To accommodate these columns, bgame calls __typeConversions
-rather than __convertToInt, changing string values to datetime objects where 
-appropriate.  Note that __typeConversions calls __mergeDateTime to properly
+The two methods after bevent - bgame and box - mirror bevent's structure.<br/>
+There is only one meaningful difference between the type of data returned by<br/>
+bevent and bgame - the latter contains three columns that return date<br/>
+information.  To accommodate these columns, bgame calls __typeConversions<br/>
+rather than __convertToInt, changing string values to datetime objects where<br/>
+appropriate.  Note that __typeConversions calls __mergeDateTime to properly<br/>
 format the time component in any datetime object.
 
 ```python
@@ -191,10 +191,10 @@ def bgame(
 ```
 Figure 5 - bgame call signature and docstring.
 
-Box is simply a truncated version of bevent and bgame.  The method returns
-output once it has exited the for loop, with no additional formatting.  Box's
-functionality is largely identical to its concomitant command line
-application, allowing the user to return box scores from multiple seasons with
+Box is simply a truncated version of bevent and bgame.  The method returns<br/>
+output once it has exited the for loop, with no additional formatting.  Box's<br/>
+functionality is largely identical to its concomitant command line<br/>
+application, allowing the user to return box scores from multiple seasons with<br/>
 a single call.
 
 ```python
@@ -214,29 +214,29 @@ def box(
 ```
 Figure 6 - box call signature and docstring.
 
-The remaining methods in RetroObject serve a singular purpose - format the
-input passed into, and the output returned by, the emulation methods bevent,
-bgame, and box.  They accomplish this in a nested manner.  Relatively simple
-formatting methods are passed into more complex ones, which are in turn called
+The remaining methods in RetroObject serve a singular purpose - format the<br/>
+input passed into, and the output returned by, the emulation methods bevent,<br/>
+bgame, and box.  They accomplish this in a nested manner.  Relatively simple<br/>
+formatting methods are passed into more complex ones, which are in turn called<br/>
 by the emulation methods.
 	
-__columnPipe, called by bevent and bgame prior to executing their for loops,
-converts the user's requested columns into a valid string.  While this may
-seem like a simple task, quirks in the command line applications complicate
+__columnPipe, called by bevent and bgame prior to executing their for loops,<br/>
+converts the user's requested columns into a valid string.  While this may<br/>
+seem like a simple task, quirks in the command line applications complicate<br/>
 its execution. 
 
-Internally, bevent and bgame columns begin with zero and run through
-eighty-four and ninety-six, respectively.  However, if a user were to pass
-every column number to an executable, then an error message is returned,
-indicating that the requested columns exceed the number of columns.  This is a 
-semantic error, with the retrosheet application conflating column maximums
-with the length of the column array requested.  To prevent this error,
-__columnPipe returns a column string in the following form: 0-84.  This
-convention is applied to all consecutive column numbers, such that a request
-for columns "1, 2, 3, 4, 5, 20, 21, 22" would return "1-5, 20-22."  Although
-__columnPipe returns a column string, it cedes the logic to another method,
-titled "__createColumnString."  __columnPipe also returns a sorted array of
-the columns selected, and in the case of bgame, the difference between the
+Internally, bevent and bgame columns begin with zero and run through<br/>
+eighty-four and ninety-six, respectively.  However, if a user were to pass<br/>
+every column number to an executable, then an error message is returned,<br/>
+indicating that the requested columns exceed the number of columns.  This is a<br/>
+semantic error, with the retrosheet application conflating column maximums<br/>
+with the length of the column array requested.  To prevent this error,<br/>
+__columnPipe returns a column string in the following form: 0-84.  This<br/>
+convention is applied to all consecutive column numbers, such that a request<br/>
+for columns "1, 2, 3, 4, 5, 20, 21, 22" would return "1-5, 20-22."  Although<br/>
+__columnPipe returns a column string, it cedes the logic to another method,<br/>
+titled "__createColumnString."  __columnPipe also returns a sorted array of<br/>
+the columns selected, and in the case of bgame, the difference between the<br/>
 index positions of columns one and four in the sorted column array.
 
 ```python
@@ -264,13 +264,13 @@ return (
 ```
 Figure 8 - __columnPipe return value.
 
-__createColumnString is straightforward in its approach.  An array of column
-numbers is passed to the method.  A for loop iterates over the array,
-attempting to assign the next element to the variable nextValue.  If this
-assignment does not succeed, then iteration has concluded, and columnString is
-returned.  Otherwise, the method determines whether the next value is one
-greater than the current value.  If it is, then the loop continues to the next
-value.  If it is not, then a string of the following form, minValue-value, is
+__createColumnString is straightforward in its approach.  An array of column<br/>
+numbers is passed to the method.  A for loop iterates over the array,<br/>
+attempting to assign the next element to the variable nextValue.  If this<br/>
+assignment does not succeed, then iteration has concluded, and columnString is<br/>
+returned.  Otherwise, the method determines whether the next value is one<br/>
+greater than the current value.  If it is, then the loop continues to the next<br/>
+value.  If it is not, then a string of the following form, minValue-value, is<br/>
 concatenated to columnString, and minValue is assigned to nextValue.
 
 ```python
@@ -284,12 +284,12 @@ def __createColumnString(self, columns) -> list:
 ```
 Figure 9 - __createColumnString call signature and docstring.
 
-When bgame calls __columnPipe, __columnPipe calls the method
-__linkDateColumns.  If a user requests bgame's fourth column without its first
-column, then __linkDateColumns appends the first column to the list of
-requested columns.  Because bgame's fourth column is a time string, it is
-devoid of meaning without an associated date.  In recognition of this
-deficiency, __linkDateColumns prevents the fourth column from being returned
+When bgame calls __columnPipe, __columnPipe calls the method<br/>
+__linkDateColumns.  If a user requests bgame's fourth column without its first<br/>
+column, then __linkDateColumns appends the first column to the list of<br/>
+requested columns.  Because bgame's fourth column is a time string, it is<br/>
+devoid of meaning without an associated date.  In recognition of this<br/>
+deficiency, __linkDateColumns prevents the fourth column from being returned<br/>
 without a date component.
 
 ```python
@@ -305,9 +305,9 @@ def __linkDateColumns(self, columns) -> tuple:
 ```
 Figure 10 - __linkDateColumns call signature and docstring.
 
-The other formatting method directly called by bevent, bgame, and box is
-__createDateString.  It returns the date components used in a valid query
-string, accomplishing this feat by incorporating two additional methods: 
+The other formatting method directly called by bevent, bgame, and box is<br/>
+__createDateString.  It returns the date components used in a valid query<br/>
+string, accomplishing this feat by incorporating two additional methods:<br/>
 __convertToDatetime and __evalGameId.
 
 ```python
@@ -332,15 +332,15 @@ def __createDateString(
 ```
 Figure 11 - __createDateString call signature and docstring.
 
-__createDateString begins via tuple assignment, with year, start, and end
-referencing __convertToDatetime's output.  __convertToDatetime uses another
-method, __convertDatetimeComponents, to ensure that year, start, and end are
+__createDateString begins via tuple assignment, with year, start, and end<br/>
+referencing __convertToDatetime's output.  __convertToDatetime uses another<br/>
+method, __convertDatetimeComponents, to ensure that year, start, and end are<br/>
 either datetime or NoneType objects.
 
-Once year, start, and end have been properly assigned, __createDateString runs
-a gauntlet of conditional tests and returns the properly formatted date
-string.  If a game id is passed to the method, then the id is passed to
-__evalGameId, which determines whether the id is properly constructed.  If the
+Once year, start, and end have been properly assigned, __createDateString runs<br/>
+a gauntlet of conditional tests and returns the properly formatted date<br/>
+string.  If a game id is passed to the method, then the id is passed to<br/>
+__evalGameId, which determines whether the id is properly constructed.  If the<br/>
 formatting is correct, then the game id is returned.
 
 ```python
@@ -384,11 +384,11 @@ def __evalGameId(self, id):
 ```
 Figure 14 - __evalGameId call signature and docstring.
 
-As described, the program's control flow is fairly basic.  Emulation functions
-call __columnPipe and __createDateString to form valid queries.  In turn,
-__columnPipe and __createDateString call methods to accomplish this task.  The
-output returned by python's run method is passed through __convertToInt and
-__typeConversions and returned to the caller.  For more information regarding
+As described, the program's control flow is fairly basic.  Emulation functions<br/>
+call __columnPipe and __createDateString to form valid queries.  In turn,<br/>
+__columnPipe and __createDateString call methods to accomplish this task.  The<br/>
+output returned by python's run method is passed through __convertToInt and<br/>
+__typeConversions and returned to the caller.  For more information regarding<br/>
 a method, please reference that method's docstring.
 
 ```python
