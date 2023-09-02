@@ -90,7 +90,7 @@ class Retro_Object:
         Call retrosheet's bevent.exe, returning the output in the form
         of a Pandas dataframe.
         """
-        query = self.build_query(columns,year,"bgame",start,end)
+        query = self.build_query(year,columns,"bgame",start,end)
         chdir(events_dir) 
 
         # String output from bgame.exe.
@@ -117,10 +117,11 @@ class Retro_Object:
         """
         if app == "bevent":
             column_string = get_bevent_cols(columns)
+            date_string = get_date_str(year,start,end)
         else:
             column_string = get_bgame_cols(columns)
+            date_string = f"{get_date_str(year,start,end)} -dsf"
 
-        date_string = get_date_str(year,start,end)
         team_extension = get_ext(year,self.team)
 
         return " ".join([

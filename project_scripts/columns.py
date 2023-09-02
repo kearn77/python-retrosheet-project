@@ -80,7 +80,7 @@ def get_bgame_cols(columns: list[int]):
         print(err)
         exit(0)
 
-    if columns == list(range(97)):
-        return ' '.join(["-f","0-96"])
+    if columns == list(range(85)):
+        return ' '.join(["-f","0-84"])
     else:
         return "-f " + ','.join([str(i) for i in columns])

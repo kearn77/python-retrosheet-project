@@ -50,7 +50,7 @@ def to_datetime_bgame(frame: pd.DataFrame) -> None:
     """
     for column in frame.columns:
         if column == 1:
-            frame[column] = pd.to_datetime(frame[column],yearfirst=True)
+            frame[column] = pd.to_datetime(frame[column],format="%m/%d/%Y")
             frame[column] = frame[column].dt.date
         else:
             continue

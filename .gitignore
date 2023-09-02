@@ -12,3 +12,4 @@ project_scripts/test.ipynb
 json_files/precipitation.json
 json_files/sky.json
 json_files/wind_direction.json
+test_notebook.ipynb
