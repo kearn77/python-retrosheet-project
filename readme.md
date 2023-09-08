@@ -89,7 +89,7 @@ notebooks.<br/>
 The JSON directory contains four files - bevent_fields, bgame_fields,<br/>
 team_extensions, and bio_information - which accomplish the following:<br/>
 
-### bevent_fields.json<br/>
+#### bevent_fields.json<br/>
 
 Stores the column information associated with bevent.exe.  Can be used<br/>
 to create a python dictionary that populates a pandas DataFrame with<br/>
@@ -97,7 +97,7 @@ appropriate column titles.  The key-value relationship is of the form<br/>
 int -> str, where int is a number zero to ninety-six and str is a<br/>
 column title.<br/>
 
-### bgame_fileds.json<br/>
+#### bgame_fileds.json<br/>
 
 Stores the column information associated with bgame.exe.  Can be used to<br/>
 create a python dictionary that populates a pandas DataFrame with<br/>
@@ -105,7 +105,7 @@ appropriate column titles.  The key-value relationship is of the form<br/>
 int -> str, where int is a number zero to eighty-four and str is a<br/>
 column title.<br/>
 
-### team_extensions.json<br/>
+#### team_extensions.json<br/>
 
 Stores team abbreviations for every major league baseball team.<br/>
 Abbreviations are used when calling bevent, bgame, and box from the<br/>
@@ -114,7 +114,7 @@ valid team abbreviation.  The key-value relationship is of the form str<br/>
 -> list\list\, where str is a team abbreviation that returns a team’s<br/>
 historical information.<br/>
 
-### bio_information.json<br/>
+#### bio_information.json<br/>
 
 Contains player biographical data.  This data is stored in relation to a<br/>
 retrosheet player id, an alphanumeric representation of a player’s<br/>
